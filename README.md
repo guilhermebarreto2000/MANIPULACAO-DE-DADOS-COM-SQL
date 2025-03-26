@@ -1,4 +1,5 @@
 # MANIPULAÇÃO DE DADOS COM SQL
+![MYSQL](https://github.com/user-attachments/assets/4638e438-fe67-45a9-832c-2a0a3b2e839c)
 
 ### OS DADOS ABAIXO SÃO DE UMA EMPRESA FINANCEIRA QUE POSSUI COMO VARIÁVEIS: ID DO CLIENTE, NOME DO CLIENTE, DATA DE NASCIMENTO, GÊNERO, E-MAIL, TELEFONE, ID DA CONTA, TIPO DE CONTA, SALDO, STATUS DA CONTA, DATA DE CRIAÇÃO DA CONTA, LIMITE DE CRÉDITO, SALDO DEVEDOR E A DATA DA ÚLTIMA TRANSAÇÃO.
 
@@ -84,6 +85,7 @@ VALUES <br />
 
 #### EXIBIÇÃO DA TABELA
 SELECT * FROM clientes_contas;
+![image](https://github.com/user-attachments/assets/b687221f-7a52-4961-a558-889f9370e7a6)
 
 #### Avaliando diferentes variáveis
 
@@ -93,21 +95,26 @@ SELECT * FROM clientes_contas;
 select count(id_cliente) <br />
 from clientes_contas <br />
 where data_nascimento  between '1970-01-01' and '1979-01-01'; <br />
+![image](https://github.com/user-attachments/assets/6d04feb9-11b0-4d17-8320-b673a83252b6)
+
 
 #### - 17 clientes entre 1980 e 1999 -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where data_nascimento  between '1980-01-01' and '1989-01-01'; <br />
+![image](https://github.com/user-attachments/assets/6ea2c839-2f73-4611-8650-fcba824a6ba8)
 
 #### -- 28 clientes entre 1990 e 1999 -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where data_nascimento  between '1990-01-01' and '1999-01-01'; <br />
+![image](https://github.com/user-attachments/assets/f36a5c4e-30a9-4eb6-ac05-404b6fdade1c)
 
 #### -- 1 cliente entre 2000 e 2009 -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where data_nascimento  between '2000-01-01' and '2009-01-01'; <br />
+![image](https://github.com/user-attachments/assets/c9367586-a690-4aaf-8c56-37fa7aef8b4b)
 
 
 #### -- Gênero -- <br />
@@ -115,11 +122,13 @@ where data_nascimento  between '2000-01-01' and '2009-01-01'; <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where genero like 'Feminino'; <br />
+![image](https://github.com/user-attachments/assets/5c4faec0-1743-4f2d-8db1-90ba74aac643)
 
 #### -- 25 homens <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where genero like 'Masculino'; <br />
+![image](https://github.com/user-attachments/assets/381bb172-eb46-4f35-a0d7-8060eeb15bf8)
 
 
 select * from clientes_contas; <br />
@@ -128,20 +137,26 @@ select * from clientes_contas; <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where tipo_conta like 'Corrente'; <br />
+![image](https://github.com/user-attachments/assets/5c4028cc-50d6-47cc-8a98-a716f7a388af)
 
 #### -- 24 contas popupanças -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where tipo_conta like 'Poupança'; <br />
+![image](https://github.com/user-attachments/assets/15776a77-41b3-41cf-87fe-2413a0c6ee4c)
 
 
 #### -- Saldo -- <br />
 #### -- Média dos saldos: '6458.025000' -- <br />
 select avg(saldo) <br />
 from clientes_contas; <br />
+![image](https://github.com/user-attachments/assets/9533e781-5dd1-4ce7-94fa-817d9988c008)
+
 -- Soma dos saldos: 322901.25-- <br />
 select sum(saldo) <br />
 from clientes_contas; <br />
+![image](https://github.com/user-attachments/assets/7d239095-908e-46a3-8860-542505099343)
+
 
 
 #### -- Status da Conta -- <br />
@@ -149,22 +164,27 @@ from clientes_contas; <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where status_conta like 'Ativa'; <br />
+![image](https://github.com/user-attachments/assets/1f580227-1ff5-4bc1-8488-5a921643dec9)
+
 
 #### -- 5 bloqueadas -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where status_conta like 'Bloqueada'; <br />
+![image](https://github.com/user-attachments/assets/3ace7306-34ab-42ed-9600-acd9842ef6a2)
 
 #### -- 4 inativas -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where status_conta like 'Inativa'; <br />
+![image](https://github.com/user-attachments/assets/eeae7c84-c2b8-4dc9-812a-f58b7bb3b94b)
 
 
 #### -- Limite de crédito <br />
 #### -- Média: 1080.000000 -- <br />
 select avg(limite_credito) <br />
 from clientes_contas; <br />
+![image](https://github.com/user-attachments/assets/66d2cf85-d825-48f2-8a36-e63f0bfc0348)
 
 
 #### -- Saldo devedor -- <br />
@@ -172,9 +192,11 @@ from clientes_contas; <br />
 #### -- Soma dos saldos devedores: 900.00 -- <br />
 select avg(saldo_devedor) <br />
 from clientes_contas; <br />
+![image](https://github.com/user-attachments/assets/27caa9c1-59d6-4b5a-882f-134fa7ca5e86)
 
 select sum(saldo_devedor) <br />
 from clientes_contas; <br />
+![image](https://github.com/user-attachments/assets/afc77d6d-ded1-49d5-9ff9-b941468285a9)
 
 
 #### -- Agora que finalizei a avaliação das principais variáveis, vou avaliar algumas delas juntas: -- <br />
@@ -184,44 +206,52 @@ from clientes_contas; <br />
 select avg(saldo) <br />
 from clientes_contas <br />
 where tipo_conta like 'Corrente'; <br />
+![image](https://github.com/user-attachments/assets/76b175c0-e279-46cf-8f2a-e5c892559f9d)
 
 #### -- Conta poupança: '11770.854167'-- <br />
 select avg(saldo) <br />
 from clientes_contas <br />
 where tipo_conta like 'Poupança'; <br />
+![image](https://github.com/user-attachments/assets/5a41daf5-a9be-4752-bbfd-10a112357a2f)
 
 #### -- Conta Popupança possui um saldo médio muito maior do que a Conta Corrente -- <br />
 select avg(saldo), tipo_conta <br />
 from clientes_contas <br />
 group by tipo_conta; <br />
+![image](https://github.com/user-attachments/assets/2a37ef40-334f-44e2-b89b-0f323e2ebc18)
 
 
 #### -- Clientes com limite de crédito acima da média -- <br />
 #### -- Média -- <br />
 select avg(limite_credito) <br />
 from clientes_contas; <br />
+![image](https://github.com/user-attachments/assets/da47002e-c307-4a2a-b01f-8d03f15091a1)
 
 #### -- Clientes -- <br />
 select id_cliente, nome_cliente <br />
 from clientes_contas <br />
 where limite_credito > 1080.000000 ; <br />
+![image](https://github.com/user-attachments/assets/4bb8e3d4-6f7a-4fb6-be90-e10197ab93d4)
 
 #### -- Contagem dos clientes: 15/50 -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where limite_credito > 1080.000000 ; <br />
+![image](https://github.com/user-attachments/assets/70748cb3-7cbd-46ce-8a2f-bf33e6f0a0f4)
 
 
 #### -- Nomes de clientes com saldo negativo --  <br />
 select nome_cliente <br />
 from clientes_contas <br />
 where saldo_devedor > 0; <br />
+![image](https://github.com/user-attachments/assets/e65cb863-ae0f-459e-82fe-039fe3522b89)
 
 
 #### -- Clientes inativos com saldo positivo -- <br />
 select nome_cliente <br />
 from clientes_contas <br />
 where saldo_devedor = 0 and status_conta = 'Inativa'; <br />
+![image](https://github.com/user-attachments/assets/eeb60beb-d094-41f2-8972-f852313b8b33)
 
 
 #### -- Limite de crédito vs Saldo devedor -- <br />
@@ -229,32 +259,38 @@ where saldo_devedor = 0 and status_conta = 'Inativa'; <br />
 select nome_cliente, saldo_devedor, limite_credito <br />
 from clientes_contas <br />
 where saldo_devedor = 0; <br />
+![image](https://github.com/user-attachments/assets/b24500d4-00b8-495c-a411-57dd9a95cd05)
 
 select avg(limite_credito) <br />
 from clientes_contas <br />
 where saldo_devedor = 0; <br />
+![image](https://github.com/user-attachments/assets/4a942cba-8716-4117-9c83-f9f9a07c3e32)
 
 
 #### -- Clientes com saldo devedor maior que 0 possuem o limite de 1687.500000 -- <br />
 select nome_cliente, saldo_devedor, limite_credito <br />
 from clientes_contas <br />
 where saldo_devedor > 0; <br />
+![image](https://github.com/user-attachments/assets/b862745b-550a-4ffa-8980-7f84818f5268)
 
 select avg(limite_credito) <br />
 from clientes_contas <br />
 where saldo_devedor > 0; <br />
+![image](https://github.com/user-attachments/assets/38d714f5-c760-48c1-a477-58f89f977c4a)
 
 
 #### -- Análise de gênero por tipo de conta -- <br />
 select genero, tipo_conta, count(*) as num_clientes <br />
 from clientes_contas <br />
 group by genero, tipo_conta; <br />
+![image](https://github.com/user-attachments/assets/94264d19-bd24-4464-8043-a9d382fbdc9d)
 
 
 #### -- Análise de status da conta por tipo de conta -- <br />
 select status_conta, tipo_conta, count(*) as status_tipoconta <br />
 from clientes_contas <br />
 group by status_conta, tipo_conta; <br />
+![image](https://github.com/user-attachments/assets/482250af-5b49-4c26-bdef-ca4452dbfb28)
 
 
 #### -- Clientes com maior saldo de conta corrente -- <br />
@@ -262,6 +298,7 @@ select nome_cliente, id_cliente, saldo, tipo_conta <br />
 from clientes_contas <br />
 where tipo_conta like 'Corrente' <br />
 order by saldo desc; <br />
+![image](https://github.com/user-attachments/assets/2f831a44-e30c-48fe-85e8-48054a9eb0e0)
 
 
 select * from clientes_contas; <br />
