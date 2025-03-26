@@ -82,61 +82,61 @@ VALUES <br />
 (49, 'Priscila Pereira', '1993-03-15', 'Feminino', 'priscila.pereira@email.com', '9994594434', 1049, 'Corrente', 2300.00, 'Bloqueada', '2020-04-22', 5000.00, 100.00, '2025-03-20'), <br />
 (50, 'Fernando Lima', '1988-02-01', 'Masculino', 'fernando.lima@email.com', '9994483323', 1050, 'Poupança', 7000.00, 'Ativa', '2021-03-02', 0.00, 0.00, '2025-03-23'); <br />
 
-##### EXIBIÇÃO DA TABELA
+#### EXIBIÇÃO DA TABELA
 SELECT * FROM clientes_contas;
 
-##### Avaliando diferentes variáveis
+#### Avaliando diferentes variáveis
 
--- Data de nascimento -- <br />
+#### -- Data de nascimento -- <br />
 
--- 1 cliente entre 1970 e 1979 -- <br />
+#### -- 1 cliente entre 1970 e 1979 -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where data_nascimento  between '1970-01-01' and '1979-01-01'; <br />
 
--- 17 clientes entre 1980 e 1999 -- <br />
+#### - 17 clientes entre 1980 e 1999 -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where data_nascimento  between '1980-01-01' and '1989-01-01'; <br />
 
--- 28 clientes entre 1990 e 1999 -- <br />
+#### -- 28 clientes entre 1990 e 1999 -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where data_nascimento  between '1990-01-01' and '1999-01-01'; <br />
 
--- 1 cliente entre 2000 e 2009 -- <br />
+#### -- 1 cliente entre 2000 e 2009 -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where data_nascimento  between '2000-01-01' and '2009-01-01'; <br />
 
 
--- Gênero -- <br />
--- 25 mulheres <br />
+#### -- Gênero -- <br />
+#### -- 25 mulheres <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where genero like 'Feminino'; <br />
 
--- 25 homens <br />
+#### -- 25 homens <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where genero like 'Masculino'; <br />
 
 
 select * from clientes_contas; <br />
--- Tipos de contas -- <br />
--- 26 contas correntes -- <br />
+#### -- Tipos de contas -- <br />
+#### -- 26 contas correntes -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where tipo_conta like 'Corrente'; <br />
 
--- 24 contas popupanças -- <br />
+#### -- 24 contas popupanças -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where tipo_conta like 'Poupança'; <br />
 
 
--- Saldo -- <br />
--- Média dos saldos: '6458.025000' -- <br />
+#### -- Saldo -- <br />
+#### -- Média dos saldos: '6458.025000' -- <br />
 select avg(saldo) <br />
 from clientes_contas; <br />
 -- Soma dos saldos: 322901.25-- <br />
@@ -144,32 +144,32 @@ select sum(saldo) <br />
 from clientes_contas; <br />
 
 
--- Status da Conta -- <br />
--- 41 ativas -- <br />
+#### -- Status da Conta -- <br />
+#### -- 41 ativas -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where status_conta like 'Ativa'; <br />
 
--- 5 bloqueadas -- <br />
+#### -- 5 bloqueadas -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where status_conta like 'Bloqueada'; <br />
 
--- 4 inativas -- <br />
+#### -- 4 inativas -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where status_conta like 'Inativa'; <br />
 
 
--- Limite de crédito <br />
--- Média: 1080.000000 -- <br />
+#### -- Limite de crédito <br />
+#### -- Média: 1080.000000 -- <br />
 select avg(limite_credito) <br />
 from clientes_contas; <br />
 
 
--- Saldo devedor -- <br />
--- Média: 18.0 <br />
--- Soma dos saldos devedores: 900.00 -- <br />
+#### -- Saldo devedor -- <br />
+#### -- Média: 18.0 <br />
+#### -- Soma dos saldos devedores: 900.00 -- <br />
 select avg(saldo_devedor) <br />
 from clientes_contas; <br />
 
@@ -177,55 +177,55 @@ select sum(saldo_devedor) <br />
 from clientes_contas; <br />
 
 
--- Agora que finalizei a avaliação das principais variáveis, vou avaliar algumas delas juntas: -- <br />
+#### -- Agora que finalizei a avaliação das principais variáveis, vou avaliar algumas delas juntas: -- <br />
 
--- Saldo médio por tipo de conta -- <br />
--- Conta corrente: '1553.875000'  -- <br />
+#### -- Saldo médio por tipo de conta -- <br />
+#### -- Conta corrente: '1553.875000'  -- <br />
 select avg(saldo) <br />
 from clientes_contas <br />
 where tipo_conta like 'Corrente'; <br />
 
--- Conta poupança: '11770.854167'-- <br />
+#### -- Conta poupança: '11770.854167'-- <br />
 select avg(saldo) <br />
 from clientes_contas <br />
 where tipo_conta like 'Poupança'; <br />
 
--- Conta Popupança possui um saldo médio muito maior do que a Conta Corrente -- <br />
+#### -- Conta Popupança possui um saldo médio muito maior do que a Conta Corrente -- <br />
 select avg(saldo), tipo_conta <br />
 from clientes_contas <br />
 group by tipo_conta; <br />
 
 
--- Clientes com limite de crédito acima da média -- <br />
--- Média -- <br />
+#### -- Clientes com limite de crédito acima da média -- <br />
+#### -- Média -- <br />
 select avg(limite_credito) <br />
 from clientes_contas; <br />
 
--- Clientes -- <br />
+#### -- Clientes -- <br />
 select id_cliente, nome_cliente <br />
 from clientes_contas <br />
 where limite_credito > 1080.000000 ; <br />
 
--- Contagem dos clientes: 15/50 -- <br />
+#### -- Contagem dos clientes: 15/50 -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where limite_credito > 1080.000000 ; <br />
 
 
--- Nomes de clientes com saldo negativo --  <br />
+#### -- Nomes de clientes com saldo negativo --  <br />
 select nome_cliente <br />
 from clientes_contas <br />
 where saldo_devedor > 0; <br />
 
 
--- Clientes inativos com saldo positivo -- <br />
+#### -- Clientes inativos com saldo positivo -- <br />
 select nome_cliente <br />
 from clientes_contas <br />
 where saldo_devedor = 0 and status_conta = 'Inativa'; <br />
 
 
--- Limite de crédito vs Saldo devedor -- <br />
--- Clientes com saldo devedor igual a 0 possuem o limite de 964.285714 -- <br />
+#### -- Limite de crédito vs Saldo devedor -- <br />
+#### -- Clientes com saldo devedor igual a 0 possuem o limite de 964.285714 -- <br />
 select nome_cliente, saldo_devedor, limite_credito <br />
 from clientes_contas <br />
 where saldo_devedor = 0; <br />
@@ -235,7 +235,7 @@ from clientes_contas <br />
 where saldo_devedor = 0; <br />
 
 
--- Clientes com saldo devedor maior que 0 possuem o limite de 1687.500000 -- <br />
+#### -- Clientes com saldo devedor maior que 0 possuem o limite de 1687.500000 -- <br />
 select nome_cliente, saldo_devedor, limite_credito <br />
 from clientes_contas <br />
 where saldo_devedor > 0; <br />
@@ -245,19 +245,19 @@ from clientes_contas <br />
 where saldo_devedor > 0; <br />
 
 
--- Análise de gênero por tipo de conta -- <br />
+#### -- Análise de gênero por tipo de conta -- <br />
 select genero, tipo_conta, count(*) as num_clientes <br />
 from clientes_contas <br />
 group by genero, tipo_conta; <br />
 
 
--- Análise de status da conta por tipo de conta -- <br />
+#### -- Análise de status da conta por tipo de conta -- <br />
 select status_conta, tipo_conta, count(*) as status_tipoconta <br />
 from clientes_contas <br />
 group by status_conta, tipo_conta; <br />
 
 
--- Clientes com maior saldo de conta corrente -- <br />
+#### -- Clientes com maior saldo de conta corrente -- <br />
 select nome_cliente, id_cliente, saldo, tipo_conta <br />
 from clientes_contas <br />
 where tipo_conta like 'Corrente' <br />
