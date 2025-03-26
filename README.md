@@ -152,7 +152,7 @@ select avg(saldo) <br />
 from clientes_contas; <br />
 ![image](https://github.com/user-attachments/assets/9533e781-5dd1-4ce7-94fa-817d9988c008)
 
--- Soma dos saldos: 322901.25-- <br />
+#### -- Soma dos saldos: 322901.25-- <br />
 select sum(saldo) <br />
 from clientes_contas; <br />
 ![image](https://github.com/user-attachments/assets/7d239095-908e-46a3-8860-542505099343)
@@ -199,7 +199,7 @@ from clientes_contas; <br />
 ![image](https://github.com/user-attachments/assets/afc77d6d-ded1-49d5-9ff9-b941468285a9)
 
 
-#### -- Agora que finalizei a avaliação das principais variáveis, vou avaliar algumas delas juntas: -- <br />
+#### -- Após finalizar a avaliação das principais variáveis, vou avaliar a relação entre algumas delas: -- <br />
 
 #### -- Saldo médio por tipo de conta -- <br />
 #### -- Conta corrente: '1553.875000'  -- <br />
