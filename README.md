@@ -1,8 +1,14 @@
 # MANIPULAÇÃO DE DADOS COM SQL
 ![MYSQL](https://github.com/user-attachments/assets/4638e438-fe67-45a9-832c-2a0a3b2e839c)
-
+<br />
+<br />
+<br />
+<br />
 ### OS DADOS ABAIXO SÃO DE UMA EMPRESA FINANCEIRA QUE POSSUI COMO VARIÁVEIS: ID DO CLIENTE, NOME DO CLIENTE, DATA DE NASCIMENTO, GÊNERO, E-MAIL, TELEFONE, ID DA CONTA, TIPO DE CONTA, SALDO, STATUS DA CONTA, DATA DE CRIAÇÃO DA CONTA, LIMITE DE CRÉDITO, SALDO DEVEDOR E A DATA DA ÚLTIMA TRANSAÇÃO.
 #### OBSERVAÇÃO: OS DADOS SÃO FICTÍCIOS. PORTANTO, NÃO ESTÁ SENDO DIVULGADO NENHUM TIPO DE INFORMAÇÃO  DE PESSOAS REAIS.
+<br />
+<br />
+
 #### CRIAÇÃO DA TABELA:
 CREATE DATABASE EMPRESAFINANCEIRA; <br />
 
@@ -24,6 +30,8 @@ CREATE TABLE clientes_contas (<br />
     saldo_devedor DECIMAL(10, 2), <br />
     data_ultima_transacao DATE <br />
 ); <br />
+<br />
+<br />
 
 #### INSERÇÃO DE DADOS
 
@@ -82,12 +90,18 @@ VALUES <br />
 (48, 'Matheus Costa', '1998-05-03', 'Masculino', 'matheus.costa@email.com', '9994705545', 1048, 'Poupança', 21000.00, 'Ativa', '2020-02-10', 0.00, 0.00, '2025-03-22'), <br />
 (49, 'Priscila Pereira', '1993-03-15', 'Feminino', 'priscila.pereira@email.com', '9994594434', 1049, 'Corrente', 2300.00, 'Bloqueada', '2020-04-22', 5000.00, 100.00, '2025-03-20'), <br />
 (50, 'Fernando Lima', '1988-02-01', 'Masculino', 'fernando.lima@email.com', '9994483323', 1050, 'Poupança', 7000.00, 'Ativa', '2021-03-02', 0.00, 0.00, '2025-03-23'); <br />
+<br />
+<br />
 
 #### EXIBIÇÃO DA TABELA
 SELECT * FROM clientes_contas;
 ![image](https://github.com/user-attachments/assets/b687221f-7a52-4961-a558-889f9370e7a6)
+<br />
+<br />
 
 #### Avaliando diferentes variáveis
+<br />
+<br />
 
 #### -- Data de nascimento -- <br />
 
@@ -116,6 +130,8 @@ from clientes_contas <br />
 where data_nascimento  between '2000-01-01' and '2009-01-01'; <br />
 ![image](https://github.com/user-attachments/assets/c9367586-a690-4aaf-8c56-37fa7aef8b4b)
 
+<br />
+<br />
 
 #### -- Gênero -- <br />
 ##### -- 25 mulheres <br />
@@ -132,6 +148,9 @@ where genero like 'Masculino'; <br />
 
 
 select * from clientes_contas; <br />
+<br />
+<br />
+
 #### -- Tipos de contas -- <br />
 ##### -- 26 contas correntes -- <br />
 select count(id_cliente) <br />
@@ -145,6 +164,8 @@ from clientes_contas <br />
 where tipo_conta like 'Poupança'; <br />
 ![image](https://github.com/user-attachments/assets/15776a77-41b3-41cf-87fe-2413a0c6ee4c)
 
+<br />
+<br />
 
 #### -- Saldo -- <br />
 ##### -- Média dos saldos: '6458.025000' -- <br />
@@ -158,6 +179,8 @@ from clientes_contas; <br />
 ![image](https://github.com/user-attachments/assets/7d239095-908e-46a3-8860-542505099343)
 
 
+<br />
+<br />
 
 #### -- Status da Conta -- <br />
 ##### -- 41 ativas -- <br />
@@ -179,6 +202,8 @@ from clientes_contas <br />
 where status_conta like 'Inativa'; <br />
 ![image](https://github.com/user-attachments/assets/eeae7c84-c2b8-4dc9-812a-f58b7bb3b94b)
 
+<br />
+<br />
 
 #### -- Limite de crédito <br />
 ##### -- Média: 1080.000000 -- <br />
@@ -186,6 +211,8 @@ select avg(limite_credito) <br />
 from clientes_contas; <br />
 ![image](https://github.com/user-attachments/assets/66d2cf85-d825-48f2-8a36-e63f0bfc0348)
 
+<br />
+<br />
 
 #### -- Saldo devedor -- <br />
 ##### -- Média: 18.0 <br />
@@ -198,6 +225,8 @@ select sum(saldo_devedor) <br />
 from clientes_contas; <br />
 ![image](https://github.com/user-attachments/assets/afc77d6d-ded1-49d5-9ff9-b941468285a9)
 
+<br />
+<br />
 
 #### -- Após finalizar a avaliação das principais variáveis, vou avaliar a relação entre algumas delas: -- <br />
 
@@ -220,6 +249,8 @@ from clientes_contas <br />
 group by tipo_conta; <br />
 ![image](https://github.com/user-attachments/assets/2a37ef40-334f-44e2-b89b-0f323e2ebc18)
 
+<br />
+<br />
 
 #### -- Clientes com limite de crédito acima da média -- <br />
 ##### -- Média -- <br />
@@ -239,6 +270,8 @@ from clientes_contas <br />
 where limite_credito > 1080.000000 ; <br />
 ![image](https://github.com/user-attachments/assets/70748cb3-7cbd-46ce-8a2f-bf33e6f0a0f4)
 
+<br />
+<br />
 
 #### -- Nomes de clientes com saldo negativo --  <br />
 select nome_cliente <br />
@@ -246,6 +279,8 @@ from clientes_contas <br />
 where saldo_devedor > 0; <br />
 ![image](https://github.com/user-attachments/assets/e65cb863-ae0f-459e-82fe-039fe3522b89)
 
+<br />
+<br />
 
 #### -- Clientes inativos com saldo positivo -- <br />
 select nome_cliente <br />
@@ -253,6 +288,8 @@ from clientes_contas <br />
 where saldo_devedor = 0 and status_conta = 'Inativa'; <br />
 ![image](https://github.com/user-attachments/assets/eeb60beb-d094-41f2-8972-f852313b8b33)
 
+<br />
+<br />
 
 #### -- Limite de crédito vs Saldo devedor -- <br />
 ##### -- Clientes com saldo devedor igual a 0 possuem o limite de 964.285714 -- <br />
@@ -266,6 +303,8 @@ from clientes_contas <br />
 where saldo_devedor = 0; <br />
 ![image](https://github.com/user-attachments/assets/4a942cba-8716-4117-9c83-f9f9a07c3e32)
 
+<br />
+<br />
 
 ##### -- Clientes com saldo devedor maior que 0 possuem o limite de 1687.500000 -- <br />
 select nome_cliente, saldo_devedor, limite_credito <br />
@@ -278,6 +317,8 @@ from clientes_contas <br />
 where saldo_devedor > 0; <br />
 ![image](https://github.com/user-attachments/assets/38d714f5-c760-48c1-a477-58f89f977c4a)
 
+<br />
+<br />
 
 #### -- Análise de gênero por tipo de conta -- <br />
 select genero, tipo_conta, count(*) as num_clientes <br />
@@ -285,6 +326,8 @@ from clientes_contas <br />
 group by genero, tipo_conta; <br />
 ![image](https://github.com/user-attachments/assets/94264d19-bd24-4464-8043-a9d382fbdc9d)
 
+<br />
+<br />
 
 #### -- Análise de status da conta por tipo de conta -- <br />
 select status_conta, tipo_conta, count(*) as status_tipoconta <br />
@@ -292,6 +335,8 @@ from clientes_contas <br />
 group by status_conta, tipo_conta; <br />
 ![image](https://github.com/user-attachments/assets/482250af-5b49-4c26-bdef-ca4452dbfb28)
 
+<br />
+<br />
 
 #### -- Clientes com maior saldo de conta corrente -- <br />
 select nome_cliente, id_cliente, saldo, tipo_conta <br />
