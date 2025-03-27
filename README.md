@@ -91,26 +91,26 @@ SELECT * FROM clientes_contas;
 
 #### -- Data de nascimento -- <br />
 
-#### -- 1 cliente entre 1970 e 1979 -- <br />
+##### -- 1 cliente entre 1970 e 1979 -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where data_nascimento  between '1970-01-01' and '1979-01-01'; <br />
 ![image](https://github.com/user-attachments/assets/6d04feb9-11b0-4d17-8320-b673a83252b6)
 
 
-#### - 17 clientes entre 1980 e 1999 -- <br />
+##### - 17 clientes entre 1980 e 1999 -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where data_nascimento  between '1980-01-01' and '1989-01-01'; <br />
 ![image](https://github.com/user-attachments/assets/6ea2c839-2f73-4611-8650-fcba824a6ba8)
 
-#### -- 28 clientes entre 1990 e 1999 -- <br />
+##### -- 28 clientes entre 1990 e 1999 -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where data_nascimento  between '1990-01-01' and '1999-01-01'; <br />
 ![image](https://github.com/user-attachments/assets/f36a5c4e-30a9-4eb6-ac05-404b6fdade1c)
 
-#### -- 1 cliente entre 2000 e 2009 -- <br />
+##### -- 1 cliente entre 2000 e 2009 -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where data_nascimento  between '2000-01-01' and '2009-01-01'; <br />
@@ -118,13 +118,13 @@ where data_nascimento  between '2000-01-01' and '2009-01-01'; <br />
 
 
 #### -- Gênero -- <br />
-#### -- 25 mulheres <br />
+##### -- 25 mulheres <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where genero like 'Feminino'; <br />
 ![image](https://github.com/user-attachments/assets/5c4faec0-1743-4f2d-8db1-90ba74aac643)
 
-#### -- 25 homens <br />
+##### -- 25 homens <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where genero like 'Masculino'; <br />
@@ -133,13 +133,13 @@ where genero like 'Masculino'; <br />
 
 select * from clientes_contas; <br />
 #### -- Tipos de contas -- <br />
-#### -- 26 contas correntes -- <br />
+##### -- 26 contas correntes -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where tipo_conta like 'Corrente'; <br />
 ![image](https://github.com/user-attachments/assets/5c4028cc-50d6-47cc-8a98-a716f7a388af)
 
-#### -- 24 contas popupanças -- <br />
+##### -- 24 contas popupanças -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where tipo_conta like 'Poupança'; <br />
@@ -147,12 +147,12 @@ where tipo_conta like 'Poupança'; <br />
 
 
 #### -- Saldo -- <br />
-#### -- Média dos saldos: '6458.025000' -- <br />
+##### -- Média dos saldos: '6458.025000' -- <br />
 select avg(saldo) <br />
 from clientes_contas; <br />
 ![image](https://github.com/user-attachments/assets/9533e781-5dd1-4ce7-94fa-817d9988c008)
 
-#### -- Soma dos saldos: 322901.25-- <br />
+##### -- Soma dos saldos: 322901.25-- <br />
 select sum(saldo) <br />
 from clientes_contas; <br />
 ![image](https://github.com/user-attachments/assets/7d239095-908e-46a3-8860-542505099343)
@@ -160,20 +160,20 @@ from clientes_contas; <br />
 
 
 #### -- Status da Conta -- <br />
-#### -- 41 ativas -- <br />
+##### -- 41 ativas -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where status_conta like 'Ativa'; <br />
 ![image](https://github.com/user-attachments/assets/1f580227-1ff5-4bc1-8488-5a921643dec9)
 
 
-#### -- 5 bloqueadas -- <br />
+##### -- 5 bloqueadas -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where status_conta like 'Bloqueada'; <br />
 ![image](https://github.com/user-attachments/assets/3ace7306-34ab-42ed-9600-acd9842ef6a2)
 
-#### -- 4 inativas -- <br />
+##### -- 4 inativas -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where status_conta like 'Inativa'; <br />
@@ -181,15 +181,15 @@ where status_conta like 'Inativa'; <br />
 
 
 #### -- Limite de crédito <br />
-#### -- Média: 1080.000000 -- <br />
+##### -- Média: 1080.000000 -- <br />
 select avg(limite_credito) <br />
 from clientes_contas; <br />
 ![image](https://github.com/user-attachments/assets/66d2cf85-d825-48f2-8a36-e63f0bfc0348)
 
 
 #### -- Saldo devedor -- <br />
-#### -- Média: 18.0 <br />
-#### -- Soma dos saldos devedores: 900.00 -- <br />
+##### -- Média: 18.0 <br />
+##### -- Soma dos saldos devedores: 900.00 -- <br />
 select avg(saldo_devedor) <br />
 from clientes_contas; <br />
 ![image](https://github.com/user-attachments/assets/27caa9c1-59d6-4b5a-882f-134fa7ca5e86)
@@ -202,19 +202,19 @@ from clientes_contas; <br />
 #### -- Após finalizar a avaliação das principais variáveis, vou avaliar a relação entre algumas delas: -- <br />
 
 #### -- Saldo médio por tipo de conta -- <br />
-#### -- Conta corrente: '1553.875000'  -- <br />
+##### -- Conta corrente: '1553.875000'  -- <br />
 select avg(saldo) <br />
 from clientes_contas <br />
 where tipo_conta like 'Corrente'; <br />
 ![image](https://github.com/user-attachments/assets/76b175c0-e279-46cf-8f2a-e5c892559f9d)
 
-#### -- Conta poupança: '11770.854167'-- <br />
+##### -- Conta poupança: '11770.854167'-- <br />
 select avg(saldo) <br />
 from clientes_contas <br />
 where tipo_conta like 'Poupança'; <br />
 ![image](https://github.com/user-attachments/assets/5a41daf5-a9be-4752-bbfd-10a112357a2f)
 
-#### -- Conta Popupança possui um saldo médio muito maior do que a Conta Corrente -- <br />
+##### -- Conta Popupança possui um saldo médio muito maior do que a Conta Corrente -- <br />
 select avg(saldo), tipo_conta <br />
 from clientes_contas <br />
 group by tipo_conta; <br />
@@ -222,18 +222,18 @@ group by tipo_conta; <br />
 
 
 #### -- Clientes com limite de crédito acima da média -- <br />
-#### -- Média -- <br />
+##### -- Média -- <br />
 select avg(limite_credito) <br />
 from clientes_contas; <br />
 ![image](https://github.com/user-attachments/assets/da47002e-c307-4a2a-b01f-8d03f15091a1)
 
-#### -- Clientes -- <br />
+##### -- Clientes -- <br />
 select id_cliente, nome_cliente <br />
 from clientes_contas <br />
 where limite_credito > 1080.000000 ; <br />
 ![image](https://github.com/user-attachments/assets/4bb8e3d4-6f7a-4fb6-be90-e10197ab93d4)
 
-#### -- Contagem dos clientes: 15/50 -- <br />
+##### -- Contagem dos clientes acima da média: 15/50 -- <br />
 select count(id_cliente) <br />
 from clientes_contas <br />
 where limite_credito > 1080.000000 ; <br />
@@ -255,7 +255,7 @@ where saldo_devedor = 0 and status_conta = 'Inativa'; <br />
 
 
 #### -- Limite de crédito vs Saldo devedor -- <br />
-#### -- Clientes com saldo devedor igual a 0 possuem o limite de 964.285714 -- <br />
+##### -- Clientes com saldo devedor igual a 0 possuem o limite de 964.285714 -- <br />
 select nome_cliente, saldo_devedor, limite_credito <br />
 from clientes_contas <br />
 where saldo_devedor = 0; <br />
@@ -267,7 +267,7 @@ where saldo_devedor = 0; <br />
 ![image](https://github.com/user-attachments/assets/4a942cba-8716-4117-9c83-f9f9a07c3e32)
 
 
-#### -- Clientes com saldo devedor maior que 0 possuem o limite de 1687.500000 -- <br />
+##### -- Clientes com saldo devedor maior que 0 possuem o limite de 1687.500000 -- <br />
 select nome_cliente, saldo_devedor, limite_credito <br />
 from clientes_contas <br />
 where saldo_devedor > 0; <br />
